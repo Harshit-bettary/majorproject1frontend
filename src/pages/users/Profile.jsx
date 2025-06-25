@@ -190,7 +190,7 @@ const Profile = () => {
               </div>
               <div className="flex items-center gap-4">
                 <span className="text-gray-600 font-semibold w-32">Verified:</span>
-                <span className="text-gray-800">{user.isEmailVerified ? 'Yes' : 'No'}</span>
+                <span className="text-gray-800">{user.isVerified ? 'Yes' : 'No'}</span>
               </div>
               <div className="flex justify-end">
                 <button

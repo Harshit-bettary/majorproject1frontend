@@ -2,8 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import ResetPassword from './pages/ResetPassword';
-import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/passwords/ResetPassword';
+import ForgotPassword from './pages/passwords/ForgotPassword';
+import VerifyEmail from './pages/passwords/VerifyEmail';
 
 import VehicleList from './pages/users/VehicleList';
 import VehicleDetails from './pages/users/VehicleDetails';
@@ -34,6 +35,7 @@ import PaymentSuccess from './pages/payments/PaymentSuccess';
 import PaymentCancelled from './pages/payments/PaymentCancelled';
 import PaymentHistory from './pages/payments/PaymentHistory';
 import Reviews from './pages/users/Reviews';
+import { VerifiedIcon } from 'lucide-react';
 
 
 function App() {
@@ -49,7 +51,8 @@ function App() {
           <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>} />
 
           {/*Forgot Password Pages*/}
-          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/verify-email/:token" element={<VerifyEmail />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
 
           {/* User Pages */}

@@ -1,12 +1,10 @@
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState, createContext, useContext } from "react";
+// AuthContext.jsx
+import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("user")) || null
-  );
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
   const [token, setToken] = useState(localStorage.getItem("token") || "");
 
   useEffect(() => {
@@ -24,16 +22,19 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    const navigate = useNavigate();
     setUser(null);
     setToken("");
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    navigate("/login", { replace: true });
+  };
+
+  const resetToken = () => {
+    setToken("");
+    localStorage.removeItem("token");
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, login, logout }}>
+    <AuthContext.Provider value={{ user, token, login, logout, resetToken }}>
       {children}
     </AuthContext.Provider>
   );

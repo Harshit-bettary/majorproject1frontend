@@ -36,5 +36,17 @@
     "postcss": "^8.5.3",
     "tailwindcss": "^3.3.7",
     "vite": "^6.2.0"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harshit-bettary/majorproject1frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harshit-bettary/majorproject1frontend/issues"
+  },
+  "homepage": "https://github.com/Harshit-bettary/majorproject1frontend#readme"
 }
